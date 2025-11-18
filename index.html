@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>DevOps Lab 3 — Antibes Engineering School</title>
+    <style>
+        :root { --bg:#f7f9fb; --card:#fff; --text:#0b1a2b; --accent:#007acc; }
+        body { margin:0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:var(--bg); color:var(--text); }
+        header { background:linear-gradient(90deg, #0b3a66 0%, #005b9f 100%); color:#fff; padding:1rem; }
+        .container { max-width:900px; margin:2rem auto; padding:1rem; }
+        .card { background:var(--card); border-radius:8px; box-shadow:0 2px 8px rgba(10,20,30,0.06); padding:1rem; }
+        nav { display:flex; gap:1rem; margin-top:.5rem; }
+        a { color:var(--accent); text-decoration:none; }
+        pre { background:#0f1720; color:#dbeafe; padding:1rem; overflow:auto; border-radius:6px; }
+        footer { text-align:center; color:#6b7280; margin-top:2rem; font-size:.9rem; }
+        .meta { display:flex; justify-content:space-between; align-items:center; gap:1rem; }
+        button { background:var(--accent); color:white; border:none; padding:.5rem .8rem; border-radius:6px; cursor:pointer; }
+        @media (max-width:600px){ .meta { flex-direction:column; align-items:flex-start; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>DevOps Lab 3</h1>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">Instructions</a>
+                <a href="#">Resources</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <div class="meta">
+                <h2>Welcome</h2>
+                <button id="toggleTheme">Toggle Theme</button>
+            </div>
+            <p>This is a simple starter HTML page for your DevOps lab. Use it to document steps, add notes, or link to scripts and resources.</p>
+
+            <h3>Quick checklist</h3>
+            <ul>
+                <li>Clone the repository</li>
+                <li>Run setup scripts</li>
+                <li>Verify services are healthy</li>
+            </ul>
+
+            <h3>Example shell snippet</h3>
+            <pre><code># clone the repo
+git clone https://example.com/your-repo.git
+cd your-repo
+# run tests
+./run-tests.sh
+</code></pre>
+        </section>
+
+        <footer>
+            &copy; Antibes Engineering School — DevOps Lab 3
+        </footer>
+    </main>
+
+    <script>
+        // simple theme toggle
+        const btn = document.getElementById('toggleTheme');
+        btn.addEventListener('click', () => {
+            if (document.documentElement.style.getPropertyValue('--bg') === '#0b0f14') {
+                document.documentElement.style.setProperty('--bg', '#f7f9fb');
+                document.documentElement.style.setProperty('--card', '#fff');
+                document.documentElement.style.setProperty('--text', '#0b1a2b');
+            } else {
+                document.documentElement.style.setProperty('--bg', '#0b0f14');
+                document.documentElement.style.setProperty('--card', '#071022');
+                document.documentElement.style.setProperty('--text', '#e6eef8');
+            }
+        });
+    </script>
+</body>
+</html>
